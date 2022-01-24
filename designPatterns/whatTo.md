@@ -11,6 +11,15 @@
 - Se puede usar cuando en una libreria o framework propios uno quiere ofrecer extención a los usuarios de los objetos internos, ejemplo,  lo que hace java utils, con Excpecion.
 - Cuando se quieren guardar recursos del sistema reusando objetos ya existentes(las interfaces), en vez de construirlos una y otra vez.
 
+### Abstract factory
+
+- Abstract factory se puede utilizar cuando el codigo necesita usar de diferentes familias de objetos relacionados, pero no se quiere depender de clases concretas para evitar que las clases se liguen a una herencia.
+- Abstract factory permite crear productos de cada una de las clases de una familia, todo esto sin preocuparse de posibles equivocaciones, debido a que todo esta envuelto en una composicion razonable.
+
+### Builder
+
+
+
 
 
 
