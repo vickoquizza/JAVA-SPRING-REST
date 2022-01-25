@@ -16,7 +16,7 @@
 
 - DECORATOR | Patrones de diseño: https://www.youtube.com/watch?v=nLy4x_LPPWU&list=PLJkcleqxxobUJlz1Cm8WYd-F_kckkDvc8&index=7
 - Decorador - Patrones de diseño de software en Java: https://www.youtube.com/watch?v=Hm4KE9QdoJ0
-- Decorator Design Pattern : 
+- Decorator Design Pattern : https://www.youtube.com/watch?v=j40kRwSm4VE
 
 
 ### Builder
