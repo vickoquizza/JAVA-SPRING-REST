@@ -18,6 +18,10 @@
 
 ### Builder
 
+- El builder es muy util para evitar tener objetos que tengan sobreescritura excesiva de su constructor, haciendo que se tediosa cada instanciación diferente del objeto.
+- Cuando se tienen procesos similares para la creación de diferentes representaciones de un mismo producto, por ejemplo un carro,  todos los carros comparten estados y comportamientos similares, pero dependiendo del tipo de carro estos cambian en algunos detalles.
+- Sirve tambien para crear objetos complejos o Composite trees.
+
 
 
 
