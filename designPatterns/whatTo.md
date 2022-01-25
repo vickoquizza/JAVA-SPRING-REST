@@ -22,6 +22,10 @@
 - Cuando se tienen procesos similares para la creación de diferentes representaciones de un mismo producto, por ejemplo un carro,  todos los carros comparten estados y comportamientos similares, pero dependiendo del tipo de carro estos cambian en algunos detalles.
 - Sirve tambien para crear objetos complejos o Composite trees.
 
+### Decorator
+
+- Usar decorador puede ser excelente para cuando se quiere añadir elementos extra a un objeto sin necesidad de extenderlo.
+- Es bueno usarlo cuando es raro o no es posible usar la herencia.
 
 
 
