@@ -9,6 +9,17 @@ Los patrones de diseño son un conjunto de soluciones a problemas comunes a la h
 
 Tambien los patrones de diseño se pueden usar como un lenguaje comun entre desarolladores a la hora de debatir, recomendar o comunicar situaciones relacionadas al diseño de software.
 
+## Tipos de patrones de dieño
+
+#### Creacional Patterns
+Son mecanismos que sirven para tener flexibilidad y reusabilidad a la hora de crear nuevos objetos en el proyecto.
+
+#### Structural Patterns
+Explican como ensamblar las clases y los objetos en estructuras mas flexibles y eficientes.
+
+#### Behavioral Patterns
+Se encargan de hacer efectiva la comunicación e interacción entre los diferentes objetos y clases de un proyecto.
+
 ## ¿ Para que usar algunos de los Design Patterns?
 
 ### Singleton
