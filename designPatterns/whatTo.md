@@ -33,5 +33,10 @@
 - Se puede usar cuando uno quiere extender una clase en diferentes dimensiones o variaciones independientes.
 - Se puede usar si se quieren cambiar implementaciones sobre una abstraccion durante el tiempo de ejecución de un programa.
 
+### Strategy
 
+- Se puede usar cuando se quieran usar diferentes varianes de un algoritmo sobre un objeto en especifico sobre el tiempo de ejecución.
+- Se puede usar cuando se tiene un moton de clases que ejecutan su comportamiento de forma similar.
+- Permite separar la logica del cliente de los algoritmos que para el cliente no son importantes o escenciales en su funcionamiento.
+- Cuando se tiene un switch obsesivo con multiples variantes de un mismo algoritmo a aplicar.
 
