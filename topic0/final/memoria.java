@@ -1,7 +1,10 @@
 import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class memoria {
+    private static Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
+
     private static String[] memory = new String[200];
     private static int id = 1;
 
@@ -57,9 +60,11 @@ public class memoria {
         int memoryCounter = 0;
 
         for (int i = toDelete.size() - 1; i >= 0 ; i--){
-            if(toDelete.get(i).charAt(3) == Character.forDigit(idWanted, 10)){
-                toDelete.remove(i);
-                deleteCounter++;
+            if(isNumeric(toDelete.get(i).substring(1))){
+                if(Integer.parseInt(toDelete.get(i).substring(1)) == idWanted){
+                    toDelete.remove(i);
+                    deleteCounter++;
+                }
             }
         }
 
@@ -100,6 +105,13 @@ public class memoria {
             System.out.println();
         }
 
+    }
+
+    public static boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
+        }
+        return pattern.matcher(strNum).matches();
     }
 
 }

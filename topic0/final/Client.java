@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Client {
     public static void main(String args[]){
@@ -23,7 +24,7 @@ public class Client {
                         Mem.showMemory();
                     }
                 } else if (input.charAt(0) == 'd') {
-                    memoryPosicion = Mem.deleteProccess(Character.getNumericValue(input.charAt(1)));
+                    memoryPosicion = Mem.deleteProccess(Integer.parseInt(input.substring(1)));
                     Mem.showMemory();
                 } else {
                     System.out.println("Invalid input!");
@@ -38,4 +39,5 @@ public class Client {
         }
 
     }
+
 }
