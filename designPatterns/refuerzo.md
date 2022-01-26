@@ -32,3 +32,5 @@
 ### Strategy 
 
 - STRATEGY | PATRONES de DISEÑO: https://www.youtube.com/watch?v=VQ8V0ym2JSo&list=PLJkcleqxxobUJlz1Cm8WYd-F_kckkDvc8&index=4
+- Strategy Design Pattern: https://www.youtube.com/watch?v=-NCgRD9-C6o
+
