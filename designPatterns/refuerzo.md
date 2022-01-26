@@ -23,3 +23,8 @@
 - No encontre muchos videos que implementen la version de GoF, asi que use más bien estos dos links.
 - Builder: https://refactoring.guru/design-patterns/builder
 - Builder in Java: https://refactoring.guru/design-patterns/builder/java/example#example-0
+
+## Algunos patrones de diseño adicionales
+
+### Bridge
+- BRIDGE | Patrones de Diseño: https://www.youtube.com/watch?v=6bIHhzqMdgg&list=PLJkcleqxxobUJlz1Cm8WYd-F_kckkDvc8&index=10
