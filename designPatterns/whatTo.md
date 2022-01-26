@@ -27,7 +27,11 @@
 - Usar decorador puede ser excelente para cuando se quiere añadir elementos extra a un objeto sin necesidad de extenderlo.
 - Es bueno usarlo cuando es raro o no es posible usar la herencia.
 
+### Bridge 
 
+- Se puede usar cuando uno quiere dividir una clase especifica con muchas variaciones y no quiere exteneder la herencia a multiples subclases para evitar los multiples problemas que puede traer la abstraccion.
+- Se puede usar cuando uno quiere extender una clase en diferentes dimensiones o variaciones independientes.
+- Se puede usar si se quieren cambiar implementaciones sobre una abstraccion durante el tiempo de ejecución de un programa.
 
 
 
