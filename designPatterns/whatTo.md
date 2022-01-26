@@ -3,6 +3,12 @@ Un patron de diseño es una forma comun de solucionar problemas relacionados con
 
 En Software. los patrones han existido casi siempre sin embargo, gracias al libro Design Patterns: Elements of Reusable Object-Oriented Software por Erich Gamma, John Vlissides, Ralph Johnson, and Richard Helm, se clasificaron en distintos tipos de patrones y se les dio un nombre para una identificación comun, este libro y sus patrones son conocidos como GoF patterns o GoF book.
 
+## ¿Porque usar patrones de diseño?
+
+Los patrones de diseño son un conjunto de soluciones a problemas comunes a la hora de de diseñar software, sobre todo conocerlos ayuda mucho a solucionar problemas de herencia, composicion, abstración, polimorfismo entre otros conceptos que se pueden presentar a la hora de implementar la programación orientada a objetos.
+
+Tambien los patrones de diseño se pueden usar como un lenguaje comun entre desarolladores a la hora de debatir, recomendar o comunicar situaciones relacionadas al diseño de software.
+
 ## ¿ Para que usar algunos de los Design Patterns?
 
 ### Singleton
