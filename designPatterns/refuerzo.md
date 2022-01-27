@@ -27,6 +27,8 @@
 - No encontre muchos videos que implementen la version de GoF, asi que use más bien estos dos links.
 - Builder: https://refactoring.guru/design-patterns/builder
 - Builder in Java: https://refactoring.guru/design-patterns/builder/java/example#example-0
+- Java Clean Code Tutorial #3 - Builder Design Pattern Example: https://www.youtube.com/watch?v=xy6FUwftz1Q&t=140s
+
 
 ## Algunos patrones de diseño adicionales
 
@@ -38,3 +40,6 @@
 - STRATEGY | PATRONES de DISEÑO: https://www.youtube.com/watch?v=VQ8V0ym2JSo&list=PLJkcleqxxobUJlz1Cm8WYd-F_kckkDvc8&index=4
 - Strategy Design Pattern: https://www.youtube.com/watch?v=-NCgRD9-C6o
 
+### Adapter
+
+- Adapter Design Pattern: https://www.youtube.com/watch?v=qG286LQM6BU
