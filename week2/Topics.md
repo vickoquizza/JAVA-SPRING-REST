@@ -11,3 +11,8 @@ Aca pondre toda la documentación relacionada a los distintos ejercicios que he 
 - Some Maven Good practices: https://books.sonatype.com/mvnref-book/reference/pom-relationships-sect-pom-best-practice.html
 
 # Log4j
+
+Log4J es una dependencia para tener logs del programa, funciona mejor que el tipico Sout(por lo menos para guardar procesos y errores de nuestras classes y objetos en bases de datos o archivos simples)
+
+-What Is Log4j, Why Log4j Came Into Picture: https://www.java4s.com/log4j-tutorials/what-is-log4j-why-log4j-came-into-picture/
+-
