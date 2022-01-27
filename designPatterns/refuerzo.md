@@ -1,5 +1,9 @@
 # Refuerzo - Design Patterns
 
+### Conceptos basicos para usar en los patrones de diseño
+- Design Patterns in Plain English | Mosh Hamedani (Al menos los primeros 40 minutos) : https://www.youtube.com/watch?v=NU_1StN5Tkk
+
+
 ### Singleton 
 - Patrones de diseño en Java : https://www.youtube.com/watch?v=Z06Phxtj13g
 
