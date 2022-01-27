@@ -62,3 +62,7 @@ Se encargan de hacer efectiva la comunicación e interacción entre los diferent
 - Permite separar la logica del cliente de los algoritmos que para el cliente no son importantes o escenciales en su funcionamiento.
 - Cuando se tiene un switch obsesivo con multiples variantes de un mismo algoritmo a aplicar.
 
+### Adapter
+
+- Nos sirve para cuando se quiere usar una clase existente, pero los datos, variables o interface que usa no es compatible con el resto del codigo.
+- Cuando se quieren usar varias subclases pero la funcionalidad de estas difiere de algunos atributos de la clase pariente.
