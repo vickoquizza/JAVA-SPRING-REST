@@ -15,4 +15,8 @@ Aca pondre toda la documentación relacionada a los distintos ejercicios que he 
 Log4J es una dependencia para tener logs del programa, funciona mejor que el tipico Sout(por lo menos para guardar procesos y errores de nuestras classes y objetos en bases de datos o archivos simples)
 
 - What Is Log4j, Why Log4j Came Into Picture: https://www.java4s.com/log4j-tutorials/what-is-log4j-why-log4j-came-into-picture/
--
+
+Log4J tiene diferentes componentes que usa para todo el proceso de: crear el logger, reconocer el mensaje enviado mediante metodos, adjuntar los mensajes en determinado medio y mostarlos de determinada forma:
+
+- What Are The Main Components Of Log4J: https://www.java4s.com/log4j-tutorials/what-are-the-main-components-of-log4j/
+
