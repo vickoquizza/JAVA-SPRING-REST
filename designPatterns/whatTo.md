@@ -66,3 +66,8 @@ Se encargan de hacer efectiva la comunicación e interacción entre los diferent
 
 - Nos sirve para cuando se quiere usar una clase existente, pero los datos, variables o interface que usa no es compatible con el resto del codigo.
 - Cuando se quieren usar varias subclases pero la funcionalidad de estas difiere de algunos atributos de la clase pariente.
+
+### Observer
+
+- Se usa cuando los cambios de un objeto depende de los cambios de otro, y el primero necesita saber acerca del cambio de primera mano.
+- Sobre todo cuando se necesitan notificar cambias pero durante un tiempo limitado, por eso se permite la inscripción y subscripción de objetos.
