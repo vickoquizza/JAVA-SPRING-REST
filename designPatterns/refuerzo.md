@@ -55,3 +55,7 @@
 ### Prototype
 
 - Prototype Design Pattern Tutorial: https://www.youtube.com/watch?v=AFbZhRL0Uz8&list=PLF206E906175C7E07&index=9
+
+### Proxy
+
+- Proxy desing pattern in java| Proxy pattern example| Design pattern| Java9s.com: https://www.youtube.com/watch?v=WGnCr8Cr2gc
