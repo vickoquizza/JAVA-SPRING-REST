@@ -43,3 +43,7 @@
 ### Adapter
 
 - Adapter Design Pattern: https://www.youtube.com/watch?v=qG286LQM6BU
+
+### Observer
+
+- Observer Design Pattern: https://www.youtube.com/watch?v=wiQdrH2YpT4
