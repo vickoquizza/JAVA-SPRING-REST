@@ -77,3 +77,10 @@ Se encargan de hacer efectiva la comunicación e interacción entre los diferent
 - Tambien sirve mucho cuando se quiere tener un sistema por capas, permitiendo que todo sea más sencillo de refactorizar, actualizar o reusar.
 - Para tener un punto simplificado para trabajar con otras clases que trabajan en conjunto.
 
+### Chain of responsability
+
+- Se utiliza cuando se tiene que procesar diferentes peticiones en diferentes formas, pero la secuencia y las peticiones como tal no se saben de primera mano.
+- Cuando se requieren varios manipuladores sobre una misma peticion y necesitan ejecutarse de manera ordenada.
+- Cuando el orden de los manipuladores u objetos nececite cambiar durante el tiempo de ejecución o producción
+- Por ejemplo una cadena(con jerarquia) de trabajo de multiples objetos para una petición en especifico
+
