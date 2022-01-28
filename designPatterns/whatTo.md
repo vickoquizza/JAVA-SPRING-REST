@@ -71,3 +71,9 @@ Se encargan de hacer efectiva la comunicación e interacción entre los diferent
 
 - Se usa cuando los cambios de un objeto depende de los cambios de otro, y el primero necesita saber acerca del cambio de primera mano.
 - Sobre todo cuando se necesitan notificar cambias pero durante un tiempo limitado, por eso se permite la inscripción y subscripción de objetos.
+
+### Facade 
+- Se usa cuando se tiene un conjunto de clases y acciones diferentes y se instancia una interface para que el cliente interactue directamente con esta(el Facade o  fachada) y no con cada una de las interfaces que podrian poner en problemas a la parte operativa del programa.
+- Tambien sirve mucho cuando se quiere tener un sistema por capas, permitiendo que todo sea más sencillo de refactorizar, actualizar o reusar.
+- Para tener un punto simplificado para trabajar con otras clases que trabajan en conjunto.
+
