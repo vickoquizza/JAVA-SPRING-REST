@@ -85,3 +85,8 @@ Se encargan de hacer efectiva la comunicación e interacción entre los diferent
 - Cuando el orden de los manipuladores u objetos nececite cambiar durante el tiempo de ejecución o producción
 - Por ejemplo una cadena(con jerarquia) de trabajo de multiples objetos para una petición en especifico
 
+### Prototype
+
+- En breves sirve para crear nuevas instancias copiandolas de otros objetos, permite añadir instancias de subclases que se extienden de una clase pariente en el tiempo de ejecución y reduce la nececidad de crear subclases(menos herencias).
+- Prototype se usa cuando el codigo no puede depender de un grupo de clases concretas a copiar, mucho de esto pasa cuando se trabaja con codigo de terceros.
+- Cuando se quiere reducir la cantidad de subclases que solo difieren en la manera en que son incializadas, tipo tener objetos pre contruidos listos para cualquier tipo de configuración 
