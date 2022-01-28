@@ -79,6 +79,7 @@ Se encargan de hacer efectiva la comunicación e interacción entre los diferent
 
 ### Chain of responsability
 
+- De forma especifica este patron manda primero datos a un objeto y si este no puede hacer nada con ellos, los envia a otro numero de objetos que quizas si puedan operar con el.
 - Se utiliza cuando se tiene que procesar diferentes peticiones en diferentes formas, pero la secuencia y las peticiones como tal no se saben de primera mano.
 - Cuando se requieren varios manipuladores sobre una misma peticion y necesitan ejecutarse de manera ordenada.
 - Cuando el orden de los manipuladores u objetos nececite cambiar durante el tiempo de ejecución o producción
