@@ -52,3 +52,6 @@
 
 - Facade Design Pattern: https://www.youtube.com/watch?v=B1Y8fcYrz5o
 
+### Prototype
+
+- Prototype Design Pattern Tutorial: https://www.youtube.com/watch?v=AFbZhRL0Uz8&list=PLF206E906175C7E07&index=9
