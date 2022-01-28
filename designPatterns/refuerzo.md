@@ -47,3 +47,8 @@
 ### Observer
 
 - Observer Design Pattern: https://www.youtube.com/watch?v=wiQdrH2YpT4
+
+### Facade
+
+- Facade Design Pattern: https://www.youtube.com/watch?v=B1Y8fcYrz5o
+
