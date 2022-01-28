@@ -90,3 +90,11 @@ Se encargan de hacer efectiva la comunicación e interacción entre los diferent
 - En breves sirve para crear nuevas instancias copiandolas de otros objetos, permite añadir instancias de subclases que se extienden de una clase pariente en el tiempo de ejecución y reduce la nececidad de crear subclases(menos herencias).
 - Prototype se usa cuando el codigo no puede depender de un grupo de clases concretas a copiar, mucho de esto pasa cuando se trabaja con codigo de terceros.
 - Cuando se quiere reducir la cantidad de subclases que solo difieren en la manera en que son incializadas, tipo tener objetos pre contruidos listos para cualquier tipo de configuración 
+
+### Proxy
+
+- Tecnicamente es proveer una clase que limite el acceso a otra clase especifica.
+- Se utiliza para muchas cosas como inicialización tardia, esto significa que algunos objetos que consumen muchos recursos pero no son necesarios todo el tiempo que esten en ejecución se van a inicializar solo cuando se nececiten.
+- Para elaborar proteccion para nuestro proyecto o servicio, es decir solo permitir que algunos de los clientes puedan acceder al servicio o proyecto.
+- Cuando se esta ejecutando un servicio remoto.
+- Para cuando se quiere tener un registro de los pedidos que se le hacen a nuestro proyecto, o cuando se quieren obtener solo algunos de los pedidos hechos.
