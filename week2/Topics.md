@@ -20,3 +20,8 @@ Log4J tiene diferentes componentes que usa para todo el proceso de: crear el log
 
 - What Are The Main Components Of Log4J: https://www.java4s.com/log4j-tutorials/what-are-the-main-components-of-log4j/
 
+La forma en la que se usa Log4j a cambiado, pero estos dos tutoriales ofrecen una visión basica de como funciona:
+
+- Log4j Example On Using FileAppender And ConsoleAppender Simultaneously: https://www.java4s.com/log4j-tutorials/log4j-example-on-using-fileappender-and-consoleappender-simultaneously/
+- Curso Java #11. Como Emplear Logs en Java Usando Log4j: https://www.youtube.com/watch?v=FRF2zW9U4O0
+
