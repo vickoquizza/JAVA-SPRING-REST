@@ -9,8 +9,8 @@ public class Tienda {
         Producto3 producto3Info = new Producto3();
 
         //Creamos los suscriptores que van a recibir información sobre los productos
-        Suscriptor cliente1 = new Suscriptor();
-        Suscriptor cliente2 = new Suscriptor();
+        Suscriptor cliente1 = new Suscriptor(1);
+        Suscriptor cliente2 = new Suscriptor(2);
 
         //Al cliente 1 lo suscribimos a los precios de los productos 1 y 3
         producto1Info.attach(cliente1);
@@ -30,5 +30,17 @@ public class Tienda {
         producto2Info.setProducto2Price(90);
         System.out.println("Para el cliente dos el precio del producto 2 quedo en: ");
         cliente2.printPrices();
+
+        System.out.println("----------------------------------------------------------");
+
+        //Suscribimos al cliente dos a los otros productos
+        producto1Info.attach(cliente2);
+        producto2Info.attach(cliente2);
+        producto3Info.attach(cliente2);
+
+        //Y con estas actualizaciones podemos ver como ambos clientes reciben la misma información
+        producto1Info.setProducto1Price(70.0);
+        producto2Info.setProducto2Price(85);
+        producto3Info.setProducto3Price(25.0);
     }
 }

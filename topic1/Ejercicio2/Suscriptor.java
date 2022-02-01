@@ -6,9 +6,13 @@ public class Suscriptor implements Observer{
     private double producto1Precio;
     private double producto2Precio;
     private double producto3Precio;
-
+    private int id;
 
     public Suscriptor(){
+    }
+
+    public Suscriptor(int id) {
+        this.id = id;
     }
 
     @Override
@@ -33,7 +37,7 @@ public class Suscriptor implements Observer{
     }
 
     public void printPrices(){
-        System.out.println("Producto 1: " + this.producto1Precio + " , Producto 2: " + this.producto2Precio + " y Producto 3: " + this.producto3Precio);
+        System.out.println("Cliente N."+ this.id + " Producto 1: " + this.producto1Precio + " , Producto 2: " + this.producto2Precio + " y Producto 3: " + this.producto3Precio);
     }
 }
 
