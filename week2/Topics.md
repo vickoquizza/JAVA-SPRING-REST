@@ -28,4 +28,5 @@ La forma en la que se usa Log4j a cambiado, pero estos dos tutoriales ofrecen un
 # Spring Boot
 
 - Spring Boot Para principiantes: https://www.youtube.com/watch?v=vtPkZShrvXQ
-- - Este tutorial puede necesitar de otros conceptos para entender mejor porque se utilizan algunas cosas como
+  - Este tutorial puede necesitar de otros conceptos para entender mejor porque se utilizan algunas cosas como:
+    - Dependency Injection: 
