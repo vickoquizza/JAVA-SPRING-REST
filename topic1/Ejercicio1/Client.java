@@ -12,8 +12,14 @@ public class Client {
         String colorOption = input.substring(0,2);
         String batteryOption = input.substring(2,4);
         String memoryOption = input.substring(4);
-        Reproductor reproductor = new Reproductor(colorOption, batteryOption, memoryOption);
 
-        reproductor.getSetup();
+        if ((input.length() < 6) || (input.length() > 6)){
+            System.out.println("Debe digitar de nuevo los comandos, comando invalido");
+        }else{
+            Reproductor reproductor = new Reproductor(colorOption, batteryOption, memoryOption);
+
+            reproductor.getSetup();
+        }
+
     }
 }
