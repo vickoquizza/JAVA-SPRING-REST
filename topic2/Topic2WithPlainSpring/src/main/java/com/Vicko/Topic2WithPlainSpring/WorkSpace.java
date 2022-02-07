@@ -1,21 +1,18 @@
 package com.Vicko.Topic2WithPlainSpring;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.Vicko.Topic2WithPlainSpring.Repositories.Printer;
+import org.springframework.beans.PropertyEditorRegistry;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class WorkSpace {
     private Printer printer;
 
-    private PrinterFactory printerFactory = new PrinterFactory();
+    @Autowired
+    private PrinterFactory printerFactory;
 
-    public void dependencySetter(String type){
-        this.printer = printerFactory.getPrinter(type);
+    public String getPrinter() {
+        return printerFactory.getPrinter().print();
     }
-
-    public String printing(){
-        return printer.print();
-    }
-
-
 }
