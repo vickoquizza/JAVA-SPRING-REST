@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class WorkSpace {
-    private Printer printer;
 
     @Autowired
     private PrinterFactory printerFactory;

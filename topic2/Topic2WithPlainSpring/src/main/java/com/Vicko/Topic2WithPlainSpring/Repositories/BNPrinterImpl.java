@@ -1,8 +1,9 @@
 package com.Vicko.Topic2WithPlainSpring.Repositories;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-@Repository
+@Service
 public class BNPrinterImpl implements Printer {
     @Override
     public String print() {
