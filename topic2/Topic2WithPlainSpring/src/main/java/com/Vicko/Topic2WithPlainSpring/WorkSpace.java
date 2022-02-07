@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Value;
 public class WorkSpace {
     private Printer printer;
 
-    public void dependencySetter(Printer printer){
-        this.printer = printer;
+    private PrinterFactory printerFactory = new PrinterFactory();
+
+    public void dependencySetter(String type){
+        this.printer = printerFactory.getPrinter(type);
     }
 
     public String printing(){

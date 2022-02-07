@@ -17,8 +17,6 @@ public class Topic2WithPlainSpringApplication {
 		String input;
 
 		//Inicializacion de los dos posibles impresoras disponibles en la oficiona y la oficina como tal
-		BNPrinterImpl bnPrinter = new BNPrinterImpl();
-		BNCPrinterImpl bncPrinter = new BNCPrinterImpl();
 		WorkSpace workSpace = (WorkSpace) context.getBean("workSpace");
 
 		System.out.println("Esta aplicación sirve para que elija la impresora donde quiere imprimir sus documentos");
@@ -27,17 +25,7 @@ public class Topic2WithPlainSpringApplication {
 		System.out.print("Introduzca su opcion: ");
 		input = scan.nextLine().toLowerCase();
 
-		switch (input){
-			case "bn":
-				workSpace.dependencySetter(bnPrinter);
-				break;
-			case "bnc":
-				workSpace.dependencySetter(bncPrinter);
-				break;
-			default:
-				workSpace.dependencySetter(bnPrinter);
-				break;
-		}
+		workSpace.dependencySetter(input);
 
 		System.out.println(workSpace.printing());
 
