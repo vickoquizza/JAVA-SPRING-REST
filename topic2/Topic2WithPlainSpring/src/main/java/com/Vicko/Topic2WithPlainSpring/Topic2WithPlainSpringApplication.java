@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Topic2WithPlainSpringApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		ApplicationContext context = SpringApplication.run(Topic2WithPlainSpringApplication.class,args);
 		Scanner scan = new Scanner(System.in);
 		String input;
 
