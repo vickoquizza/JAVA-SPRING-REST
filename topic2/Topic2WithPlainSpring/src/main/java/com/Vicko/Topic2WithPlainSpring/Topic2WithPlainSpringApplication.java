@@ -14,7 +14,7 @@ public class Topic2WithPlainSpringApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(Topic2WithPlainSpringApplication.class,args);
 
-		//Inicializacion de los dos posibles impresoras disponibles en la oficiona y la oficina como tal
+		//Inicializacion del controlador en el contexto de la aplicación
 		WorkSpace workSpace = (WorkSpace) context.getBean("workSpace");
 
 		System.out.println(workSpace.getPrinter());
