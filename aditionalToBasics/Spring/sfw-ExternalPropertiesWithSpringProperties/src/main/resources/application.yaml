@@ -1,8 +1,0 @@
-spring:
-  profiles:
-      active: dog,EN,qa
-
-vicko:
-  username: sudoFromYAML
-  password: passwordFromYAML
-  jbdCurl: someURLFromYAML
