@@ -16,11 +16,6 @@ public class PassWordCracker {
 
         String finalPasswordAttempt = passwordAttempt;
 
-
-        
-
-
-
-
+        System.out.println(passwords.stream().anyMatch(word -> word.contentEquals(finalPasswordAttempt)));
     }
 }

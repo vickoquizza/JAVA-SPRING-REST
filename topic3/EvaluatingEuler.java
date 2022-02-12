@@ -1,28 +1,20 @@
 package Topic3;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 public class EvaluatingEuler {
+    static final UnaryOperator<Integer> factorial = number -> (number == 1) ? 1 : number * EvaluatingEuler.factorial.apply(number - 1);
+    static final BiFunction<Double, Integer, Double>  power = (base, pow) -> (pow == 0) ? 1 : base * EvaluatingEuler.power.apply(base, pow - 1);
+    static final BiFunction<Double, Integer, Double> Euler = (x, pow) -> (pow == 0) ? 1 : power.apply(x,pow)/factorial.apply(pow) +  EvaluatingEuler.Euler.apply(x, pow - 1);
+
     public static void main(String[] args) {
+
 
         System.out.println("TestCases");
 
-        Double eulerDe20 = Euler(20.0, 9);
-        Double eulerDe5 = Euler(5.0, 9);
-        Double eulerDe05 = Euler(0.5,9);
-
-        System.out.printf("%.4f\n%.4f\n%.4f\n", eulerDe20,eulerDe5,eulerDe05);
+        System.out.printf("%.4f\n%.4f\n%.4f\n%.4f\n", Euler.apply(20.0, 9), Euler.apply(5.0, 9),Euler.apply(0.5,9), Euler.apply(-0.5,9));
     }
 
-    static Integer factorial(int number){
-        return (number == 1) ? 1 : number * factorial(number - 1);
-    }
-
-    static Double power(Double base, int pow){
-        return (pow == 0) ? 1 : base * power(base, pow - 1);
-    }
-
-    static Double Euler(Double x, int pow){
-        return (pow == 0) ? 1 : power(x,pow)/factorial(pow) +  Euler(x, pow - 1);
-    }
 }
