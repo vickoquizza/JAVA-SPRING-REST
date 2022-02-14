@@ -1,6 +1,7 @@
 package Topic3;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 public class PassWordCracker {
@@ -14,8 +15,19 @@ public class PassWordCracker {
         System.out.println("Password attempt");
         passwordAttempt = scan.nextLine().toLowerCase();
 
-        String finalPasswordAttempt = passwordAttempt;
+        String coincidences = passWordCracker(passwords, passwordAttempt);
 
-        System.out.println(passwords.stream().anyMatch(word -> word.contentEquals(finalPasswordAttempt)));
+
+        System.out.println(coincidences);
+
+
+
     }
+
+   static String passWordCracker(List<String> passwords, String passwordAttempt){
+       return passwords.stream()
+               .filter(passwordAttempt::startsWith)
+               .map(password -> passwordAttempt.startsWith(password) ? passWordCracker(passwords, passwordAttempt.substring(password.length())) : "False")
+               .collect(Collectors.joining(" "));
+    };
 }
