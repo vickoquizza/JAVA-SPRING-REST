@@ -17,11 +17,11 @@ public class PassWordCracker {
 
         List<String> coincidences = passWordCracker(passwords, passwordAttempt);
 
-        String coincidencesString  = coincidences.stream().collect(Collectors.joining(" "));
+        String coincidencesCompare = coincidences.stream().collect(Collectors.joining());
 
-        if (passwords.stream().allMatch(password -> coincidences.contains(password))){
-            System.out.println(coincidencesString);
-        }else{
+        if (coincidencesCompare.equals(passwordAttempt)){
+            System.out.println(coincidences.stream().collect(Collectors.joining(" ")));
+           } else{
             System.out.println("WRONG PASSWORD");
         }
 
