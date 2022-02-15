@@ -1,0 +1,38 @@
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.vicko.examples.HelloWorld'
+        )
+    }
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.9.1"
+    }
+}
+
+plugins {
+    id 'com.palantir.docker' version '0.9.1'
+    id 'com.palantir.docker-run' version '0.9.1'
+}
+
+apply plugin: 'com.palantir.docker'
+
+docker {
+    name 'com.vicko.examples/docker-hello-world:1'
+    tags 'latest'
+    dockerfile 'src/main/resources/Dockerfile'
+    dependsOn tasks.jar
+}
+
+dockerRun {
+    name 'docker-hello-world-container'
+    image 'com.javacodegeeks.examples/docker-hello-world:1'
+    command 'java', '-Djava.security.egd=file:/dev/./urandom', '-jar', 'app.jar'
+}
