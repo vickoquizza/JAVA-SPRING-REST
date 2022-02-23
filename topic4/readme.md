@@ -15,3 +15,5 @@ el directorio docker-mysql-student
 ![contenedores en desktop](https://github.com/vickoquizza/JAVA-SPRING-REST/blob/main/topic4/images/DockerImage2.PNG)
 
 ### Query a la base de datos desde Mysql Workbench
+
+![query a imagen](https://github.com/vickoquizza/JAVA-SPRING-REST/blob/main/topic4/images/DockerImage3.PNG)
