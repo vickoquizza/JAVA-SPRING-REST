@@ -10,8 +10,8 @@ el directorio docker-mysql-student
 
 ### Contenedores funcionando desde CMD y Docker Desktop
 
-! [contenedores en terminal] (https://github.com/vickoquizza/JAVA-SPRING-REST/blob/main/topic4/images/DockerImage1.PNG)
+![contenedores en terminal](https://github.com/vickoquizza/JAVA-SPRING-REST/blob/main/topic4/images/DockerImage1.PNG)
 
-! [contenedores en desktop] (https://github.com/vickoquizza/JAVA-SPRING-REST/blob/main/topic4/images/DockerImage2.PNG)
+![contenedores en desktop](https://github.com/vickoquizza/JAVA-SPRING-REST/blob/main/topic4/images/DockerImage2.PNG)
 
 ### Query a la base de datos desde Mysql Workbench
