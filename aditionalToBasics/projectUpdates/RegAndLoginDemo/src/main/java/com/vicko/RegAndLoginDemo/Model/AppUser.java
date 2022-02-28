@@ -33,6 +33,12 @@ public class AppUser implements UserDetails {
     private Long id;
     private String firstName;
     private String lastName;
+    private String identificationNumber;
+    private String address;
+    private String zipCode;
+    private String city;
+    private String state;
+    private String country;
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
@@ -42,11 +48,23 @@ public class AppUser implements UserDetails {
 
     public AppUser(String firstName,
                    String lastName,
+                   String identificationNumber,
+                   String address,
+                   String zipCode,
+                   String city,
+                   String state,
+                   String country,
                    String email,
                    String password,
                    AppUserRole appUserRole) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.identificationNumber = identificationNumber;
+        this.address = address;
+        this.zipCode = zipCode;
+        this.city = city;
+        this.state = state;
+        this.country = country;
         this.email = email;
         this.password = password;
         this.appUserRole = appUserRole;
