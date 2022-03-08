@@ -8,6 +8,6 @@ import lombok.Data;
 public class Bills {
     private int companyId;
     private String billId;
-    private String billDate;
+    private String billDueDate;
     private Double billPrice;
 }
