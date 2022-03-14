@@ -8,3 +8,22 @@ definiciones se dice que todo recurso es:
 - Configuraciones -> Un subrecurso de un dispositivo.
 
 Donde cada recurso al final tiene que tener un numero de identificación unico.
+
+## Segundo en paso - Conociendo los recursos, es hora de modelarlos.
+
+Ahora que se conocen los recursos, hay que modelarlos para que su dirección descirba la manera de acceder a ellos dependiendo de los atributos que tenga presentes. En este caso
+como solo se tienen el atributo minimo para cada recurso, el mapeo de las URIs de los recursos queda asi:
+
+<pre><code>
+
+/resources
+/resources/{id}
+
+/configurations
+/configurations/{id]
+
+/resources/{id}/configurations
+/resources/{id}/configurations/{id}
+
+</pre></code>
+
