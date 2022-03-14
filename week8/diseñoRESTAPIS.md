@@ -15,7 +15,6 @@ Ahora que se conocen los recursos, hay que modelarlos para que su dirección des
 como solo se tienen el atributo minimo para cada recurso, el mapeo de las URIs de los recursos queda asi:
 
 <pre><code>
-
 /resources
 /resources/{id}
 
@@ -24,6 +23,6 @@ como solo se tienen el atributo minimo para cada recurso, el mapeo de las URIs d
 
 /resources/{id}/configurations
 /resources/{id}/configurations/{id}
-
 </pre></code>
 
+Para la creación de las URIs, siempre hay que tener en cuenta de que no se deben introducir verbos, si no solo los nombres y atrbutos de los recursos deben estar presente en las URIs.
