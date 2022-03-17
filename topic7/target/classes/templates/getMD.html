@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Metteorological Data records</title>
+</head>
+<body>
+
+<h1 th:text="#{md.title}">Meteorological Data Records</h1>
+<div>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th th:text="#{md.fecha}">Date</th>
+      <th th:text="#{md.location}">Location</th>
+      <th th:text="#{md.temperature}">Temperature(F)</th>
+    </tr>
+    <tr th:each="MD : ${MDList}">
+      <td th:text="${MD.id}" />
+      <td th:text="${MD.date}"/>
+      <td th:text="${MD.location.city}"/>
+      <td th:text="${MD.temperature}"/>
+      <td>
+        <a th:href="@{'/meteorologicData/edit/'+${MD.id}}">Edit</a>
+        &nbsp;
+        <a th:href="@{'/meteorologicData/delete/'+ ${MD.id}}">Delete</a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<a th:href="@{/meteorologicData/register}">Register record</a>
+
+
+</body>
+</html>

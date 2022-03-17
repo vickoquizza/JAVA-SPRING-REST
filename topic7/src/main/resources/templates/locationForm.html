@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Locations!</title>
+</head>
+<body>
+
+<h1 th:text="#{location.title}">Nueva locación</h1>
+
+<div>
+    <form method="POST" action="/locations/add" th:object="${location}">
+        <table>
+            <tr>
+                <td><label th:text="#{location.latitud}">Latitud</label></td>
+                <td><input th:field="*{lat}" /></td>
+            </tr>
+            <tr>
+                <td><label th:text="#{location.longitud}">Longitud</label></td>
+                <td><input th:field="*{lon}" /></td>
+            </tr>
+            <tr>
+                <td><label th:text="#{location.ciudad}">Ciudad:</label></td>
+                <td><input th:field="*{city}" /></td>
+            </tr>
+            <tr>
+                <td><label th:text="#{location.departamento}">Departamento</label></td>
+                <td><input th:field="*{state}" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+
+</body>
+</html>

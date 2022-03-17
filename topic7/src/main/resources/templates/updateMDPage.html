@@ -1,0 +1,39 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <title>Meteorologic Data Record</title>
+</head>
+<body>
+<h1 th:text="#{md.update.title}">Update record!</h1>
+<form  method="POST" action="/meteorologicData/update"  th:object="${meteorologicData}" >
+    <table>
+        <tr>
+            <td><label >id: </label></td>
+            <td><input type="text" th:field="*{id}" /></td>
+        </tr>
+        <tr>
+            <td><label th:text="#{md.fecha}" >Fecha: </label></td>
+            <td><input type="date" th:field="*{date}" /></td>
+        </tr>
+        <tr>
+            <td><label th:text="#{md.location}">Lugar: </label></td>
+            <td><select th:field ="*{location}">
+                <th:block th:each="location: ${locationList}">
+                    <option th:text="${location.city}" th:value="${location.id}"></option>
+                </th:block>
+            </select></td>
+        </tr>
+        <tr>
+            <td><label th:text="#{md.temperature}">Temperatura: </label></td>
+            <td><input type="text" th:field="*{temperature}" /></td>
+        </tr>
+        <tr>
+            <td>
+                <button th:text="#{md.submit}"type="submit">Record</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+</body>
+</html>
