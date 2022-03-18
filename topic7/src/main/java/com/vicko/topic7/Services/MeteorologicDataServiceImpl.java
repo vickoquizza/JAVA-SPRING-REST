@@ -1,5 +1,6 @@
 package com.vicko.topic7.Services;
 
+import com.vicko.topic7.DTO.MDDTO;
 import com.vicko.topic7.Exceptions.MDNotFoundException;
 import com.vicko.topic7.Models.Location;
 import com.vicko.topic7.Models.MeteorologicData;
@@ -8,6 +9,8 @@ import com.vicko.topic7.Repositories.MeteorologicDataRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,8 +23,13 @@ public class MeteorologicDataServiceImpl implements IMeteorologicDataService{
     private final LocationRepository locationRepository;
 
     @Override
-    public void createMD(MeteorologicData data) {
-        MDRepository.save(data);
+    public void createMD(MDDTO data) {
+        DecimalFormat df = new DecimalFormat("#.##");
+        double average = (Arrays.stream(data.getTemperature()).sum())/4;
+        MeteorologicData md = new MeteorologicData(data.getDate(),
+                data.getLocation(),
+                Double.parseDouble(df.format(average)));
+        MDRepository.save(md);
     }
 
     @Override

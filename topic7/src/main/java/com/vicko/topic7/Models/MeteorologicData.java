@@ -27,4 +27,9 @@ public class MeteorologicData {
 
     private double temperature;
 
+    public MeteorologicData(String date, Location location, double temperature) {
+        this.date = date;
+        this.location = location;
+        this.temperature = temperature;
+    }
 }

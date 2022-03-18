@@ -14,11 +14,11 @@
         <table>
             <tr>
                 <td><label th:text="#{location.latitud}">Latitud</label></td>
-                <td><input th:field="*{lat}" /></td>
+                <td><input type="number" step=".0001" placeholder="Maximum four decimals" th:field="*{lat}" /></td>
             </tr>
             <tr>
                 <td><label th:text="#{location.longitud}">Longitud</label></td>
-                <td><input th:field="*{lon}" /></td>
+                <td><input type="number" step=".0001" placeholder="Maximum four decimals" th:field="*{lon}" /></td>
             </tr>
             <tr>
                 <td><label th:text="#{location.ciudad}">Ciudad:</label></td>
@@ -35,6 +35,7 @@
     </form>
 </div>
 
+<a th:href="@{/meteorologicData/getMD}">Meteorologic Data Records</a>
 
 
 </body>

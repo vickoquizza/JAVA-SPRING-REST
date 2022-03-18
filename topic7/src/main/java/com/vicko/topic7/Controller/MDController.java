@@ -1,5 +1,6 @@
 package com.vicko.topic7.Controller;
 
+import com.vicko.topic7.DTO.MDDTO;
 import com.vicko.topic7.Models.Location;
 import com.vicko.topic7.Models.MeteorologicData;
 import com.vicko.topic7.Services.LocationService;
@@ -30,13 +31,13 @@ public class MDController {
     @GetMapping("/register")
     public String register(Model model){
         List<Location> locationList = locationService.getLocations();
-        model.addAttribute("meteorologicData", new MeteorologicData());
+        model.addAttribute("meteorologicData", new MDDTO());
         model.addAttribute("locationList",locationList);
         return "registerMDPage";
     }
 
     @PostMapping(path = "/add")
-    private String add(MeteorologicData meteorologicData){
+    private String add(MDDTO meteorologicData){
         service.createMD(meteorologicData);
         return "redirect:/meteorologicData/getMD";
     }
