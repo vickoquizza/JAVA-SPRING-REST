@@ -6,6 +6,7 @@ import lombok.*;
 import javax.persistence.Column;
 
 @Getter
+@Setter
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString

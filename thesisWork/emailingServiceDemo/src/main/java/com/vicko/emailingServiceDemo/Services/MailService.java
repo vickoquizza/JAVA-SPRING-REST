@@ -36,6 +36,7 @@ public class MailService {
 
     public List<MailDTO> getSentMails(String sender){
         List<MailDTO> mails = mailRepository.findAll().stream().
+                filter(mail -> mail.getSender().equals(sender)).
                 map(mail -> new MailDTO(
                         mail.getSender(),
                         mail.getPrimaryRecipient(),
@@ -65,6 +66,10 @@ public class MailService {
     public String sendMail(MailDTO mail){
         if(mail.getPrimaryRecipient() == null){
             throw new PrimaryRecipientNeededException();
+        }
+
+        if(mail.getBlindCarbonCopy() == null){
+            mail.setBlindCarbonCopy("");
         }
 
         String[] recipients = (mail.getPrimaryRecipient() + "," +  mail.getCarbonCopy() +  "," + mail.getBlindCarbonCopy()).split(",");
