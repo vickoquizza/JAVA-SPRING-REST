@@ -1,6 +1,7 @@
 package com.vicko.emailingServiceDemo.DTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vicko.emailingServiceDemo.Utils.MailLabel;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -18,4 +19,5 @@ public class MailDTO {
     private String subject;
     private String body;
     private String attachments;
+    private MailLabel label;
 }

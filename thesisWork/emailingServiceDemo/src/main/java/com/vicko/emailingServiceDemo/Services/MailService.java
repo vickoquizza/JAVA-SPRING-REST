@@ -6,6 +6,7 @@ import com.vicko.emailingServiceDemo.Models.Mail;
 import com.vicko.emailingServiceDemo.Models.MailUser;
 import com.vicko.emailingServiceDemo.Repositories.MailRepository;
 import com.vicko.emailingServiceDemo.Repositories.MailUserRepository;
+import com.vicko.emailingServiceDemo.Utils.MailLabel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,7 +45,8 @@ public class MailService {
                         mail.getBlindCarbonCopy(),
                         mail.getSubject(),
                         mail.getBody(),
-                        mail.getAttachments()
+                        mail.getAttachments(),
+                        mail.getLabel()
                 )).distinct()
                 .toList();
 
@@ -59,7 +61,17 @@ public class MailService {
                 .getMails();
     }
 
-     public List<MailUser> getUsers() {
+    public Set<Mail> searchMailByLabel(String recipient, MailLabel label){
+        return  mailUserRepository.findAll().stream()
+                .filter(user -> user.getName().equals(recipient))
+                .findFirst()
+                .get()
+                .getMails().stream()
+                .filter(mail -> mail.getLabel().equals(label))
+                .collect(Collectors.toSet());
+    }
+
+    public List<MailUser> getUsers() {
         return mailUserRepository.findAll();
     }
 
@@ -70,6 +82,10 @@ public class MailService {
 
         if(mail.getBlindCarbonCopy() == null){
             mail.setBlindCarbonCopy("");
+        }
+
+        if(mail.getLabel() == null){
+            mail.setLabel(MailLabel.NORMAL);
         }
 
         String[] recipients = (mail.getPrimaryRecipient() + "," +  mail.getCarbonCopy() +  "," + mail.getBlindCarbonCopy()).split(",");
@@ -107,7 +123,8 @@ public class MailService {
                                 mail.getSubject(),
                                 mail.getBody(),
                                 mail.getAttachments(),
-                                true);
+                                true,
+                                mail.getLabel());
                     }else{
                         toSend = new Mail(mail.getSender(),
                                 mail.getPrimaryRecipient(),
@@ -116,7 +133,8 @@ public class MailService {
                                 mail.getSubject(),
                                 mail.getBody(),
                                 mail.getAttachments(),
-                                false);
+                                false,
+                                mail.getLabel());
                     }
 
                     toSend.getMailUser().add(user);

@@ -6,6 +6,7 @@ import com.vicko.emailingServiceDemo.Exceptions.PrimaryRecipientNeededException;
 import com.vicko.emailingServiceDemo.Models.Mail;
 import com.vicko.emailingServiceDemo.Models.MailUser;
 import com.vicko.emailingServiceDemo.Services.MailService;
+import com.vicko.emailingServiceDemo.Utils.MailLabel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +36,12 @@ public class MailController {
         return mailService.getSentMails(sender);
 
     }
+
+    @GetMapping("/mails/search/{recipient}")
+    public Set<Mail> searchByLabel(@PathVariable String recipient, @RequestParam MailLabel label){
+        return mailService.searchMailByLabel(recipient,label);
+    }
+    
     @GetMapping("/mails/inbox/{recipient}")
     public Set<Mail> getInbox(@PathVariable String recipient){
         return mailService.getInbox(recipient);

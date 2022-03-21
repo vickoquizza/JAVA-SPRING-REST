@@ -6,6 +6,7 @@ import com.vicko.emailingServiceDemo.Models.Mail;
 import com.vicko.emailingServiceDemo.Models.MailUser;
 import com.vicko.emailingServiceDemo.Repositories.MailRepository;
 import com.vicko.emailingServiceDemo.Repositories.MailUserRepository;
+import com.vicko.emailingServiceDemo.Utils.MailLabel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -59,7 +60,8 @@ class MailServiceTest {
                     "Hola pana",
                     "¿Bien y vos?",
                     null,
-                    false));
+                    false,
+                    MailLabel.IMPORTANT));
         }};
 
         List<Mail> expectedList = new ArrayList<>(expectedSet);
@@ -81,7 +83,8 @@ class MailServiceTest {
                 null,
                 "Hola pana",
                 "¿Como vas?",
-                null);
+                null,
+                MailLabel.IMPORTANT);
 
         assertThrows(PrimaryRecipientNeededException.class, () -> service.sendMail(DTO));
     }
@@ -94,7 +97,8 @@ class MailServiceTest {
                 null,
                 "Hola pana",
                 "¿Que has hecho?",
-                null);
+                null,
+                MailLabel.IMPORTANT);
 
         Mail response = new Mail("Mario@Mario.com",
                 "Luigi@Mario.com",
@@ -103,7 +107,8 @@ class MailServiceTest {
                 "Hola pana",
                 "¿Que has hecho?",
                 null,
-                false);
+                false,
+                MailLabel.IMPORTANT);
 
         Mockito.when(mailUserRepository.findAll()).thenReturn(userList());
         Mockito.when(mailRepository.save(response)).thenReturn(response);
@@ -124,7 +129,8 @@ class MailServiceTest {
                 "Hola pana",
                 "¿Bien y vos?",
                 null,
-                false));
+                false,
+                MailLabel.IMPORTANT));
         users.add(userA);
         MailUser userB = new MailUser("Luigi@Mario.com");
         userB.getMails().add(new Mail("Mario@Mario.com",
@@ -134,7 +140,8 @@ class MailServiceTest {
                 "Hola pana",
                 "¿Como vas?",
                 null,
-                false));
+                false,
+                MailLabel.IMPORTANT));
         users.add(userB);
 
         return users;
@@ -148,7 +155,8 @@ class MailServiceTest {
                 "Hola pana",
                 "¿Como vas?",
                 null,
-        false));
+        false,
+                MailLabel.IMPORTANT));
         add(new Mail("Luigi@Mario.com",
                 "Bien@Mario.com",
                 null,
@@ -156,7 +164,8 @@ class MailServiceTest {
                 "Hola pana",
                 "¿Bien y vos?",
                 null,
-                false));
+                false,
+                MailLabel.IMPORTANT));
     }};
 
     static List<MailDTO> expected  = new ArrayList<MailDTO>(){{
@@ -166,6 +175,7 @@ class MailServiceTest {
                 null,
                 "Hola pana",
                 "¿Como vas?",
-                null));
+                null,
+                MailLabel.IMPORTANT));
     }};
 }

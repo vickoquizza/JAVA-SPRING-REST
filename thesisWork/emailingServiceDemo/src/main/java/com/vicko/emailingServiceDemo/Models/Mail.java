@@ -4,6 +4,7 @@ package com.vicko.emailingServiceDemo.Models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vicko.emailingServiceDemo.Utils.MailLabel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,6 +34,8 @@ public class Mail {
     private String body;
     @Column(nullable = true)
     private String attachments;
+    @Enumerated(EnumType.STRING)
+    private MailLabel label;
 
     public Mail(){
 
@@ -45,7 +48,8 @@ public class Mail {
                 String subject,
                 String body,
                 String attachments,
-                boolean sentByBcc) {
+                boolean sentByBcc,
+                MailLabel label) {
         this.sender = sender;
         this.primaryRecipient = primaryRecipient;
         this.carbonCopy = carbonCopy;
@@ -54,6 +58,7 @@ public class Mail {
         this.body = body;
         this.attachments = attachments;
         this.sentByBcc = sentByBcc;
+        this.label = label;
     }
 
     @JsonIgnore
