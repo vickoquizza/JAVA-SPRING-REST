@@ -1,11 +1,7 @@
 package com.vicko.emailingServiceDemo.DTO;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.vicko.emailingServiceDemo.Utils.MailLabel;
 import lombok.*;
 
-import javax.persistence.Column;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -13,7 +9,7 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class MailDTO {
+public class MailResponseDTO {
     private String sender;
     private String primaryRecipient;
     private String carbonCopy;
@@ -21,5 +17,5 @@ public class MailDTO {
     private String subject;
     private String body;
     private String attachments;
-    private List<MailLabel> label = new ArrayList<MailLabel>();
+    private String label;
 }

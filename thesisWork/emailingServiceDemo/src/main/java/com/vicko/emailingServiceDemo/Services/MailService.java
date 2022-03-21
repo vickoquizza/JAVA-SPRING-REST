@@ -1,6 +1,8 @@
 package com.vicko.emailingServiceDemo.Services;
 
 import com.vicko.emailingServiceDemo.DTO.MailDTO;
+import com.vicko.emailingServiceDemo.DTO.MailResponseDTO;
+import com.vicko.emailingServiceDemo.Exceptions.BodyNeededException;
 import com.vicko.emailingServiceDemo.Exceptions.PrimaryRecipientNeededException;
 import com.vicko.emailingServiceDemo.Models.Mail;
 import com.vicko.emailingServiceDemo.Models.MailUser;
@@ -35,10 +37,10 @@ public class MailService {
         }
     }
 
-    public List<MailDTO> getSentMails(String sender){
-        List<MailDTO> mails = mailRepository.findAll().stream().
+    public List<MailResponseDTO> getSentMails(String sender){
+        List<MailResponseDTO> mails = mailRepository.findAll().stream().
                 filter(mail -> mail.getSender().equals(sender)).
-                map(mail -> new MailDTO(
+                map(mail -> new MailResponseDTO(
                         mail.getSender(),
                         mail.getPrimaryRecipient(),
                         mail.getCarbonCopy(),
@@ -46,7 +48,7 @@ public class MailService {
                         mail.getSubject(),
                         mail.getBody(),
                         mail.getAttachments(),
-                        mail.getLabel()
+                        mail.getLabel().toString()
                 )).distinct()
                 .toList();
 
@@ -67,7 +69,7 @@ public class MailService {
                 .findFirst()
                 .get()
                 .getMails().stream()
-                .filter(mail -> mail.getLabel().equals(label))
+                .filter(mail -> mail.getLabel().contains(label))
                 .collect(Collectors.toSet());
     }
 
@@ -80,12 +82,18 @@ public class MailService {
             throw new PrimaryRecipientNeededException();
         }
 
+        if (mail.getBody() == null){
+            throw new BodyNeededException();
+        }
+
         if(mail.getBlindCarbonCopy() == null){
             mail.setBlindCarbonCopy("");
         }
 
         if(mail.getLabel() == null){
-            mail.setLabel(MailLabel.NORMAL);
+            mail.setLabel(new ArrayList<>(){{
+                add(MailLabel.NORMAL);
+            }});
         }
 
         String[] recipients = (mail.getPrimaryRecipient() + "," +  mail.getCarbonCopy() +  "," + mail.getBlindCarbonCopy()).split(",");
@@ -109,7 +117,7 @@ public class MailService {
         String statement = "";
         for(MailUser user: users){
                 boolean isMailRepeated = user.getMails().stream()
-                        .anyMatch(m -> ((m.getSubject().equals(mail.getSubject())) && (m.getBody().equals(mail.getBody())) && (m.getAttachments().equals(mail.getAttachments()))));
+                        .anyMatch(m -> ((m.getSubject().equals(mail.getSubject())) && (m.getBody().equals(mail.getBody()))));
 
                 if(isMailRepeated){
                     statement =  "Operation complete - This mail already exits in the receiver mailbox";

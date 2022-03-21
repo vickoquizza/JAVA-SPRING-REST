@@ -2,6 +2,7 @@ package com.vicko.emailingServiceDemo.Controllers;
 
 
 import com.vicko.emailingServiceDemo.DTO.MailDTO;
+import com.vicko.emailingServiceDemo.DTO.MailResponseDTO;
 import com.vicko.emailingServiceDemo.Exceptions.PrimaryRecipientNeededException;
 import com.vicko.emailingServiceDemo.Models.Mail;
 import com.vicko.emailingServiceDemo.Models.MailUser;
@@ -32,7 +33,7 @@ public class MailController {
     }
 
     @GetMapping("/mails/sent/{sender}")
-    public List<MailDTO> getSentMails(@PathVariable String sender){
+    public List<MailResponseDTO> getSentMails(@PathVariable String sender){
         return mailService.getSentMails(sender);
 
     }
@@ -41,7 +42,7 @@ public class MailController {
     public Set<Mail> searchByLabel(@PathVariable String recipient, @RequestParam MailLabel label){
         return mailService.searchMailByLabel(recipient,label);
     }
-    
+
     @GetMapping("/mails/inbox/{recipient}")
     public Set<Mail> getInbox(@PathVariable String recipient){
         return mailService.getInbox(recipient);

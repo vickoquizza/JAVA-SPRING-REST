@@ -9,7 +9,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -34,8 +36,10 @@ public class Mail {
     private String body;
     @Column(nullable = true)
     private String attachments;
+
+    @ElementCollection
     @Enumerated(EnumType.STRING)
-    private MailLabel label;
+    private List<MailLabel> label = new ArrayList<MailLabel>();
 
     public Mail(){
 
@@ -49,7 +53,7 @@ public class Mail {
                 String body,
                 String attachments,
                 boolean sentByBcc,
-                MailLabel label) {
+                List<MailLabel> label) {
         this.sender = sender;
         this.primaryRecipient = primaryRecipient;
         this.carbonCopy = carbonCopy;
