@@ -8,6 +8,7 @@ import lombok.*;
 @EqualsAndHashCode
 @ToString
 public class MailResponseDTO {
+    private String sender;
     private String primaryRecipient;
     private String carbonCopy;
     private String blindCarbonCopy;

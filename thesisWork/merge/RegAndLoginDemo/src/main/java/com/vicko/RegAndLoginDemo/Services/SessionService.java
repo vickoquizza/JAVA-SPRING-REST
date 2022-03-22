@@ -1,6 +1,7 @@
 package com.vicko.RegAndLoginDemo.Services;
 
 import com.vicko.RegAndLoginDemo.DTO.MailDTO;
+import com.vicko.RegAndLoginDemo.DTO.MailResponseDTO;
 import com.vicko.RegAndLoginDemo.Exceptions.BodyNeededException;
 import com.vicko.RegAndLoginDemo.Exceptions.PrimaryRecipientNeededException;
 import com.vicko.RegAndLoginDemo.Model.AppUser;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class SessionService {
@@ -32,6 +34,33 @@ public class SessionService {
                 .findFirst()
                 .get()
                 .getMails();
+    }
+
+    public List<MailResponseDTO> getSentMails(Principal principal){
+        return  mailRepository.findAll().stream().
+                filter(mail -> mail.getSender().equals(principal.getName())).
+                map(mail -> new MailResponseDTO(
+                        mail.getSender(),
+                        mail.getPrimaryRecipient(),
+                        mail.getCarbonCopy(),
+                        mail.getBlindCarbonCopy(),
+                        mail.getSubject(),
+                        mail.getBody(),
+                        mail.getAttachments(),
+                        mail.getLabel().toString()
+                )).distinct()
+                .toList();
+
+    }
+
+    public Set<Mail> searchMailByLabel(Principal principal, MailLabel label){
+        return  mailUserRepository.findAll().stream()
+                .filter(user -> user.getEmail().equals(principal.getName()))
+                .findFirst()
+                .get()
+                .getMails().stream()
+                .filter(mail -> mail.getLabel().contains(label))
+                .collect(Collectors.toSet());
     }
 
     public String sendMail(Principal principal, MailDTO mail){
