@@ -74,6 +74,37 @@ class MailServiceTest {
         assertEquals(expectedList.get(0).getSender(), resultList.get(0).getSender());
     }
 
+    @Test
+    public void CheckIfSearchWorks(){
+        List<MailUser> users = userList();
+
+        Mockito.when(mailUserRepository.findAll()).thenReturn(users);
+
+        Set<Mail> expectedSet = new HashSet<Mail>() {{
+            add(new Mail("Luigi@Mario.com",
+                    "Mario@Mario.com",
+                    null,
+                    null,
+                    "Hola pana",
+                    "¿Bien y vos?",
+                    null,
+                    false,
+                    new ArrayList<MailLabel>(){{
+                        add(MailLabel.BUSINESS);
+                        add(MailLabel.IMPORTANT);
+                    }}));
+        }};
+
+        List<Mail> expectedList = new ArrayList<>(expectedSet);
+
+        Set<Mail> result = service.searchMailByLabel("Mario@Mario.com", MailLabel.BUSINESS);
+
+        List<Mail> resultList = new ArrayList<>(result);
+
+        assertEquals(expectedList.get(0).getSender(), resultList.get(0).getSender());
+
+    }
+
 
 
     @Test
@@ -131,7 +162,20 @@ class MailServiceTest {
                 "¿Bien y vos?",
                 null,
                 false,
-                null));
+                new ArrayList<>(){{
+                    add(MailLabel.IMPORTANT);
+                }}));
+        userA.getMails().add(new Mail("Luigi@Mario.com",
+                "Mario@Mario.com",
+                null,
+                null,
+                "Hola pana",
+                "¿Bien y vos?",
+                null,
+                false,
+                new ArrayList<>(){{
+                    add(MailLabel.BUSINESS);
+                }}));
         users.add(userA);
         MailUser userB = new MailUser("Luigi@Mario.com");
         userB.getMails().add(new Mail("Mario@Mario.com",
@@ -157,7 +201,10 @@ class MailServiceTest {
                 "¿Como vas?",
                 null,
         false,
-                null));
+                new ArrayList<>(){{
+                    add(MailLabel.BUSINESS);
+                    add(MailLabel.IMPORTANT);
+                }}));
         add(new Mail("Luigi@Mario.com",
                 "Bien@Mario.com",
                 null,
@@ -166,17 +213,20 @@ class MailServiceTest {
                 "¿Bien y vos?",
                 null,
                 false,
-                null));
+                new ArrayList<>(){{
+                    add(MailLabel.BUSINESS);
+                    add(MailLabel.IMPORTANT);
+                }}));
     }};
 
-    static List<MailDTO> expected  = new ArrayList<MailDTO>(){{
-        add(new MailDTO("Mario@Mario.com",
+    static List<MailResponseDTO> expected  = new ArrayList<MailResponseDTO>(){{
+        add(new MailResponseDTO("Mario@Mario.com",
                 "Luigi@Mario.com",
                 null,
                 null,
                 "Hola pana",
                 "¿Como vas?",
                 null,
-                null));
+                "[BUSINESS, IMPORTANT]"));
     }};
 }

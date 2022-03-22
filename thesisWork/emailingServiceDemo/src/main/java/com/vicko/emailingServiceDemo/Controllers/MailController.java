@@ -39,7 +39,7 @@ public class MailController {
     }
 
     @GetMapping("/mails/search/{recipient}")
-    public Set<Mail> searchByLabel(@PathVariable String recipient, @RequestParam MailLabel label){
+    public Set<Mail> searchByLabel(@PathVariable String recipient, @RequestParam(defaultValue = "NORMAL") MailLabel label){
         return mailService.searchMailByLabel(recipient,label);
     }
 
