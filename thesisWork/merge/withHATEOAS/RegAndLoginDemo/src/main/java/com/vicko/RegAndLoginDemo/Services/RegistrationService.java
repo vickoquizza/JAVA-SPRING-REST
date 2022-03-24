@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class RegistrationService {
 
-
     private final AppUserService appUserService;
     private final EmailValidator emailValidator;
     private final zipCodeValidator zipCodeValidator;
@@ -22,19 +21,15 @@ public class RegistrationService {
 
 
     public String register(RegistrationRequest request) {
-        boolean isEmailValid = emailValidator.test(request.getEmail());
-        boolean isZipCodeValid = zipCodeValidator.test(request.getZipCode());
-        boolean isIdNumValid = identificationNumberValidator.test(request.getIdentificationNumber());
-
-        if(!isIdNumValid){
+        if(!(identificationNumberValidator.test(request.getIdentificationNumber()))){
             throw new IllegalStateException("ERROR: Try again, Identification number isn't valid");
         }
 
-        if(!isZipCodeValid){
+        if(!(zipCodeValidator.test(request.getZipCode()))){
             throw new IllegalStateException("ERROR: Try again, Zip code isn't valid");
         }
 
-        if(!isEmailValid){
+        if(!(emailValidator.test(request.getEmail()))){
             throw new IlegalEmailException();
         }
 

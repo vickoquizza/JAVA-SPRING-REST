@@ -160,7 +160,7 @@ class SessionServiceTest {
         Mockito.when(mailRepository.save(response)).thenReturn(response);
 
         String result = service.sendMail(principal, DTO);
-        assertEquals("Operation complete - Mail sent", result);
+        assertEquals("MAIL SENT", result);
 
     }
 

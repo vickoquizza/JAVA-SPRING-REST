@@ -23,9 +23,7 @@ public class AppUserService implements UserDetailsService {
     }
 
     public String signUpUser(AppUser appUser){
-        boolean userExists = repository.findByEmail(appUser.getEmail()).isPresent();
-
-        if(userExists){
+        if(repository.findByEmail(appUser.getEmail()).isPresent()){
             throw new EmailAlreadyExistsException(appUser.getEmail());
         }
 

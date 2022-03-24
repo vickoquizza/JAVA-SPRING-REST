@@ -32,7 +32,7 @@ public class SessionService {
         return  mailUserRepository.findAll().stream()
                 .filter(user -> user.getEmail().equals(principal.getName()))
                 .findFirst()
-                .get()
+                .orElseThrow(() -> new IllegalStateException("ERROR: Something wrong happened with the inbox method"))
                 .getMails();
     }
 
@@ -57,7 +57,7 @@ public class SessionService {
         return  mailUserRepository.findAll().stream()
                 .filter(user -> user.getEmail().equals(principal.getName()))
                 .findFirst()
-                .get()
+                .orElseThrow(() -> new IllegalStateException("ERROR: Something wrong happened with the search method"))
                 .getMails().stream()
                 .filter(mail -> mail.getLabel().contains(label))
                 .collect(Collectors.toSet());
@@ -97,8 +97,6 @@ public class SessionService {
                 .filter(u -> blindCarbonCopyNames.stream()
                         .anyMatch(name -> name.equals(u.getEmail())))
                 .toList();
-
-
 
         String statement = "";
         for(AppUser user: users){
